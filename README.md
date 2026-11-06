@@ -23,6 +23,28 @@ O projeto utiliza uma arquitetura em camadas, persistência relacional com Postg
 - Atualização de produtos.
 - Exclusão de produtos.
 
+  ## Endpoints da API
+
+A API disponibiliza os seguintes endpoints para gerenciamento de produtos:
+
+| Método HTTP | Rota | Descrição | Código de resposta |
+|---|---|---|---|
+| POST | `/produtos` | Cadastra um novo produto | 201 Created |
+| GET | `/produtos` | Retorna a lista de produtos cadastrados | 200 OK |
+| PUT | `/produtos/{id}` | Atualiza um produto existente | 200 OK / 404 Not Found |
+| DELETE | `/produtos/{id}` | Exclui um produto existente | 204 No Content / 404 Not Found |
+
+
+**Exemplo de utilização:**
+
+Para consultar todos os produtos:
+
+```http
+GET http://localhost:8080/produtos
+```
+
+Para consultar, atualizar ou excluir um produto específico, utilize seu identificador na rota, substituindo `{id}` pelo ID correspondente.
+
 ## Arquitetura e organização
 
 A aplicação foi estruturada utilizando o padrão de arquitetura em camadas, separando as responsabilidades de cada componente:
@@ -71,7 +93,7 @@ O mapeamento entre os objetos Java e as tabelas do banco de dados é realizado p
 1. Clone o repositório:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone (https://github.com/Rafaeelbe/api-produtos.git)
 ```
 
 2. Crie um banco de dados PostgreSQL chamado `apiprodutos`.
